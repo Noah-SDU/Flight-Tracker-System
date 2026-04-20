@@ -26,5 +26,11 @@ build_property.EnableCodeStyleSeverity =
 [C:/Users/nojus/OneDrive/Documents/Flight-Tracker-System/FlightTrackerSystem/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/nojus/OneDrive/Documents/Flight-Tracker-System/FlightTrackerSystem/Views/AirportFlightInfoView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/nojus/OneDrive/Documents/Flight-Tracker-System/FlightTrackerSystem/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/nojus/OneDrive/Documents/Flight-Tracker-System/FlightTrackerSystem/Views/RouteView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
