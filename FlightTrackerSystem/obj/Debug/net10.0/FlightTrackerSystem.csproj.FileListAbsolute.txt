@@ -99,6 +99,7 @@ C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem\obj\
 C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem\obj\Debug\net10.0\ref\FlightTrackerSystem.dll
 <<<<<<< HEAD
 =======
+>>>>>>> 7ca6b7c3ff6fcfc9d5b04120c7ab76494aaee69e
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\FlightTrackerSystem.exe
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\FlightTrackerSystem.deps.json
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\FlightTrackerSystem.runtimeconfig.json
@@ -133,6 +134,9 @@ C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\b
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\CommunityToolkit.Mvvm.dll
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\ExCSS.dll
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\HarfBuzzSharp.dll
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\LiveChartsCore.dll
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\LiveChartsCore.SkiaSharpView.dll
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\LiveChartsCore.SkiaSharpView.Avalonia.dll
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\Mapsui.dll
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\Mapsui.UI.Avalonia.dll
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\Mapsui.Nts.dll
@@ -148,6 +152,7 @@ C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\b
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\Svg.Custom.dll
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\Svg.Model.dll
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\Svg.Skia.dll
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\System.Reactive.dll
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\Tmds.DBus.Protocol.dll
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\Topten.RichTextKit.dll
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\bin\Debug\net10.0\runtimes\win-arm64\native\av_libglesv2.dll
@@ -198,4 +203,3 @@ C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\o
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\obj\Debug\net10.0\FlightTrackerSystem.pdb
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\obj\Debug\net10.0\FlightTrackerSystem.genruntimeconfig.cache
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\obj\Debug\net10.0\ref\FlightTrackerSystem.dll
->>>>>>> 7ca6b7c3ff6fcfc9d5b04120c7ab76494aaee69e
