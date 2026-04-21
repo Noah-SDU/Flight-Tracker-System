@@ -1,8 +1,7 @@
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reactive.Disposables;
 using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using FlightTrackerSystem.Models;
 
 namespace FlightTrackerSystem.ViewModels;
@@ -19,12 +18,9 @@ public partial class AirportFlightInfoViewModel : ViewModelBase
     
     [ObservableProperty] private ObservableCollection<Flight> displayedFlights = new();
 
-    [ObservableProperty] private ObservableCollection<string> statusOption = new()
+    [ObservableProperty] private ObservableCollection<string> statusOptions = new()
     {
-        "All",
-        "On time",
-        "Delayed",
-        "Cancelled"
+        "All"
     };
     
     [ObservableProperty] private string selectedStatus = "All";
@@ -34,26 +30,43 @@ public partial class AirportFlightInfoViewModel : ViewModelBase
     public void Initialize(FlightData flightData)
     {
         FlightData = flightData;
-        AllAirports = new ObservableCollection<Airport>(flightData.Airports);
-    }
-    
-    [RelayCommand]
-    public void SelectAirport(Airport airport)
-    {
-        SelectedAirport = airport;
-        LoadFlightsForAirport(airport);
+        
+        if (flightData?.Airports != null)
+        {
+            AllAirports = new ObservableCollection<Airport>(flightData.Airports.OrderBy(a => a.IataCode));
+        }
+
+        if (flightData?.Flights != null)
+        {
+            var statuses = flightData.Flights
+                .Select(f => f.Status)
+                .Where(s => !string.IsNullOrWhiteSpace(s))
+                .Distinct(System.StringComparer.OrdinalIgnoreCase)
+                .OrderBy(s => s)
+                .Cast<string>()
+                .ToList();
+
+            statuses.Insert(0, "All");
+            StatusOptions = new ObservableCollection<string>(statuses);
+        }
+        
+        SelectedStatus = "All";
+        SelectedAirport = AllAirports.FirstOrDefault();
     }
 
-    [RelayCommand]
-    public void FilterByStatys(Airport airport)
+    partial void OnSelectedAirportChanged(Airport? value)
     {
-        SelectedAirport =  airport;
+        LoadFlightsForAirport();
+    }
+
+    partial void OnSelectedStatusChanged(string value)
+    {
         ApplyFilter();
     }
     
-    private void LoadFlightsForAirport(Airport airport)
+    private void LoadFlightsForAirport()
     {
-        if(SelectedAirport == null || FlightData == null)
+        if (SelectedAirport == null || FlightData == null)
         {
             _allFlightsForAirport.Clear();
             DisplayedFlights.Clear();
@@ -73,12 +86,12 @@ public partial class AirportFlightInfoViewModel : ViewModelBase
     {
         if (SelectedStatus == "All")
         {
-            DisplayedFlights =  _allFlightsForAirport;
+            DisplayedFlights = new ObservableCollection<Flight>(_allFlightsForAirport);
         }
         else
         {
             var filtered = _allFlightsForAirport
-                .Where(f => f.Status == SelectedStatus)
+                .Where(f => string.Equals(f.Status, SelectedStatus, System.StringComparison.OrdinalIgnoreCase))
                 .ToList();
             DisplayedFlights = new ObservableCollection<Flight>(filtered);
         }

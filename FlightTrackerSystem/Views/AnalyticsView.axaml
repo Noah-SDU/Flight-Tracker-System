@@ -1,13 +1,73 @@
 <UserControl xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:FlightTrackerSystem.ViewModels"
-        xmlns:mapsui="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Name="Root"
         x:Class="FlightTrackerSystem.Views.AnalyticsView"
         x:DataType="vm:AnalyticsViewModel">
 
-        <TextBlock Text="Analytics View" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+        <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="12" Width="620" Height="360" Margin="10">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel Spacing="12">
+                                <TextBlock Text="Flight Analytics" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left"/>
+
+                                <Border Background="#20385a" BorderBrush="#5779af" BorderThickness="1" CornerRadius="8" Padding="10">
+                                        <StackPanel Spacing="6">
+                                                <TextBlock Text="Busiest Routes By Time Of Day" FontSize="16" FontWeight="SemiBold" Foreground="White"/>
+                                                <TextBlock Text="Top route-time combinations by scheduled departures" Foreground="#bdd7ff" FontSize="12"/>
+                                                <ItemsControl ItemsSource="{Binding BusiestRoutesByTimeOfDay}">
+                                                        <ItemsControl.ItemTemplate>
+                                                                <DataTemplate x:DataType="vm:AnalyticsViewModel+AnalyticsMetric">
+                                                                        <Grid ColumnDefinitions="230,*,45" Margin="0,4,0,4" ColumnSpacing="8">
+                                                                                <TextBlock Grid.Column="0" Text="{Binding Label}" Foreground="White" TextTrimming="CharacterEllipsis"/>
+                                                                                <ProgressBar Grid.Column="1" Minimum="0" Maximum="{Binding #Root.DataContext.BusiestRoutesMax}" Value="{Binding Count}" Height="12"/>
+                                                                                <TextBlock Grid.Column="2" Text="{Binding Count}" Foreground="#e8f1ff" HorizontalAlignment="Right"/>
+                                                                        </Grid>
+                                                                </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                        </StackPanel>
+                                </Border>
+
+                                <Border Background="#20385a" BorderBrush="#5779af" BorderThickness="1" CornerRadius="8" Padding="10">
+                                        <StackPanel Spacing="6">
+                                                <TextBlock Text="Top Airlines By Traffic Volume" FontSize="16" FontWeight="SemiBold" Foreground="White"/>
+                                                <TextBlock Text="Most active airlines by total flights" Foreground="#bdd7ff" FontSize="12"/>
+                                                <ItemsControl ItemsSource="{Binding TopAirlinesByTraffic}">
+                                                        <ItemsControl.ItemTemplate>
+                                                                <DataTemplate x:DataType="vm:AnalyticsViewModel+AnalyticsMetric">
+                                                                        <Grid ColumnDefinitions="230,*,45" Margin="0,4,0,4" ColumnSpacing="8">
+                                                                                <TextBlock Grid.Column="0" Text="{Binding Label}" Foreground="White" TextTrimming="CharacterEllipsis"/>
+                                                                                <ProgressBar Grid.Column="1" Minimum="0" Maximum="{Binding #Root.DataContext.TopAirlinesMax}" Value="{Binding Count}" Height="12"/>
+                                                                                <TextBlock Grid.Column="2" Text="{Binding Count}" Foreground="#e8f1ff" HorizontalAlignment="Right"/>
+                                                                        </Grid>
+                                                                </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                        </StackPanel>
+                                </Border>
+
+                                <Border Background="#20385a" BorderBrush="#5779af" BorderThickness="1" CornerRadius="8" Padding="10">
+                                        <StackPanel Spacing="6">
+                                                <TextBlock Text="Country-Level Traffic Trends" FontSize="16" FontWeight="SemiBold" Foreground="White"/>
+                                                <TextBlock Text="Peak monthly traffic segments by departure country" Foreground="#bdd7ff" FontSize="12"/>
+                                                <ItemsControl ItemsSource="{Binding CountryTrafficTrends}">
+                                                        <ItemsControl.ItemTemplate>
+                                                                <DataTemplate x:DataType="vm:AnalyticsViewModel+AnalyticsMetric">
+                                                                        <Grid ColumnDefinitions="230,*,45" Margin="0,4,0,4" ColumnSpacing="8">
+                                                                                <TextBlock Grid.Column="0" Text="{Binding Label}" Foreground="White" TextTrimming="CharacterEllipsis"/>
+                                                                                <ProgressBar Grid.Column="1" Minimum="0" Maximum="{Binding #Root.DataContext.CountryTrafficMax}" Value="{Binding Count}" Height="12"/>
+                                                                                <TextBlock Grid.Column="2" Text="{Binding Count}" Foreground="#e8f1ff" HorizontalAlignment="Right"/>
+                                                                        </Grid>
+                                                                </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                        </StackPanel>
+                                </Border>
+                        </StackPanel>
+                </ScrollViewer>
+        </Border>
 
 </UserControl>

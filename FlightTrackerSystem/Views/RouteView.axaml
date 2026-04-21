@@ -9,13 +9,27 @@
         x:DataType="vm:RouteViewModel">
 
 
-        <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="10" Width="750" Height="500" Margin="20">
-            <Grid RowDefinitions="Auto,Auto" RowSpacing="20">
-                <Grid ColumnDefinitions="Auto,*" Grid.Row="0" ColumnSpacing="10" Width="{Binding Width, ElementName=MapFrame}">
-                    <TextBlock Grid.Column="0" FontFamily="Arial" FontSize="18" Text="Search flight route:" Foreground="White" VerticalAlignment="Center"/>
-                    <AutoCompleteBox Grid.Column="1" HorizontalAlignment="Stretch"/>
+        <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="10" Width="760" Height="740" Margin="10">
+            <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
+                <Grid ColumnDefinitions="Auto,*,Auto" Grid.Row="0" ColumnSpacing="10" Width="{Binding Width, ElementName=MapFrame}">
+                    <TextBlock Grid.Column="0" FontFamily="Arial" FontSize="16" Text="Flight:" Foreground="White" VerticalAlignment="Center"/>
+                    <AutoCompleteBox x:Name="FlightAutoComplete"
+                                     Grid.Column="1"
+                                     HorizontalAlignment="Stretch"
+                                     FilterMode="Contains"
+                                     Watermark="Search and select flight"
+                                     ItemsSource="{Binding FilteredRouteFlights}"
+                                     Text="{Binding RouteSearchText, UpdateSourceTrigger=PropertyChanged}">
+                        <AutoCompleteBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" />
+                            </DataTemplate>
+                        </AutoCompleteBox.ItemTemplate>
+                    </AutoCompleteBox>
+                    <Button Grid.Column="2" Content="Clear" Background="#5779af" Padding="12,6" Command="{Binding ClearSelectionCommand}"/>
                 </Grid>
-                <Border Name="MapFrame" Grid.Row="1" BorderBrush="#5779af" BorderThickness="5" Width="700" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <Border Name="MapFrame" Grid.Row="1" BorderBrush="#5779af" BorderThickness="5" Width="710" Height="630" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <mapsui:MapControl x:Name="MyMapControl"/>
                 </Border>
             </Grid>

@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using FlightTrackerSystem.Services;
 using CommunityToolkit.Mvvm.Input;
 using FlightTrackerSystem.Models;
-using FlightTrackerSystem.Views;
 
 namespace FlightTrackerSystem.ViewModels;
 
@@ -12,7 +11,7 @@ public partial class MainWindowViewModel : ViewModelBase
     private readonly FlightDataService _dataService;
 
     [ObservableProperty]
-    private FlightData? _flightData;
+    private FlightData? flightData;
     
     [ObservableProperty]
     private string loadingMessage = "Loading...";
@@ -42,15 +41,15 @@ public partial class MainWindowViewModel : ViewModelBase
         try
         {
             IsLoading = true;
-            loadingMessage = "Loading...";
+            LoadingMessage = "Loading...";
             
             FlightData = await _dataService.LoadFlightDataAsync();
 
             if (FlightData != null)
             {
-                RouteViewModel.Initialize(FlightData);
-                AirportViewModel.Initialize(FlightData);
-                AnalyticsViewModel.Initialize(FlightData);
+                RouteViewModel?.Initialize(FlightData);
+                AirportViewModel?.Initialize(FlightData);
+                AnalyticsViewModel?.Initialize(FlightData);
             }
         }
         catch (Exception ex)

@@ -4,11 +4,11 @@ namespace FlightTrackerSystem.Models;
 
 public class Flight
 {
-    public string FlightNumber { get; set; }
-    public string AirlineName { get; set; }
-    public string AirlineCode { get; set; }
-    public string DepartureAirport { get; set; }
-    public string ArrivalAirport { get; set; }
+    public string FlightNumber { get; set; } = string.Empty;
+    public string AirlineName { get; set; } = string.Empty;
+    public string AirlineCode { get; set; } = string.Empty;
+    public string DepartureAirport { get; set; } = string.Empty;
+    public string ArrivalAirport { get; set; } = string.Empty;
     public DateTime ScheduledDeparture { get; set; }
     public DateTime ScheduledArrival { get; set; }
     public string? Status { get; set; }
@@ -16,6 +16,6 @@ public class Flight
 
     public override string ToString()
     {
-        return $"{FlightNumber}: {DepartureAirport} -> {ArrivalAirport}";
+        return $"{FlightNumber} | {AirlineCode} {AirlineName} | {DepartureAirport} -> {ArrivalAirport}";
     }
 }

@@ -17,10 +17,15 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <Grid ColumnDefinitions="Auto,Auto,Auto" HorizontalAlignment="Center" VerticalAlignment="Stretch">
-        <local:RouteView Grid.Column="1"/>
-        <local:AirportFlightInfoView Grid.Column="0"/>
-        <local:AnalyticsView Grid.Column="2"/>
-    </Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Padding="10">
+        <Grid ColumnDefinitions="Auto,Auto" HorizontalAlignment="Center" VerticalAlignment="Top" ColumnSpacing="10">
+            <Grid Grid.Column="0" RowDefinitions="Auto,Auto" RowSpacing="10" VerticalAlignment="Top">
+                <local:AirportFlightInfoView Grid.Row="0" DataContext="{Binding AirportViewModel}"/>
+                <local:AnalyticsView Grid.Row="1" DataContext="{Binding AnalyticsViewModel}"/>
+            </Grid>
+
+            <local:RouteView Grid.Column="1" DataContext="{Binding RouteViewModel}"/>
+        </Grid>
+    </ScrollViewer>
 
 </Window>

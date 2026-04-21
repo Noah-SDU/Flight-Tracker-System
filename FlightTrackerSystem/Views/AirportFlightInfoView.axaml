@@ -1,13 +1,50 @@
 <UserControl xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:FlightTrackerSystem.ViewModels"
-        xmlns:mapsui="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="FlightTrackerSystem.Views.AirportFlightInfoView"
         x:DataType="vm:AirportFlightInfoViewModel">
 
-        <Button Content="Take flight" Background="LightBlue" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="10" Width="620" Height="360" Margin="10">
+                <Grid RowDefinitions="Auto,Auto,Auto,*" RowSpacing="10">
+                        <TextBlock Grid.Row="0" Text="Airport Flights" FontSize="18" FontWeight="Bold" Foreground="White"/>
+
+                        <Grid Grid.Row="1" ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                                <TextBlock Grid.Column="0" Text="Departure airport:" Foreground="White" VerticalAlignment="Center"/>
+                                <ComboBox Grid.Column="1"
+                                                  ItemsSource="{Binding AllAirports}"
+                                                  SelectedItem="{Binding SelectedAirport}"/>
+                        </Grid>
+
+                        <Grid Grid.Row="2" ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                                <TextBlock Grid.Column="0" Text="Status:" Foreground="White" VerticalAlignment="Center"/>
+                                <ComboBox Grid.Column="1"
+                                                  ItemsSource="{Binding StatusOptions}"
+                                                  SelectedItem="{Binding SelectedStatus}"/>
+                        </Grid>
+
+                        <Border Grid.Row="3" BorderBrush="#5779af" BorderThickness="1" CornerRadius="6" Padding="8">
+                                <ScrollViewer>
+                                        <ItemsControl ItemsSource="{Binding DisplayedFlights}">
+                                                <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                                <Border BorderBrush="#3f5d8a" BorderThickness="0,0,0,1" Padding="0,6">
+                                                                        <Grid ColumnDefinitions="95,65,125,90,*" ColumnSpacing="8">
+                                                                                <TextBlock Grid.Column="0" Text="{Binding FlightNumber}" Foreground="White"/>
+                                                                                <TextBlock Grid.Column="1" Text="{Binding ArrivalAirport}" Foreground="White"/>
+                                                                                <TextBlock Grid.Column="2" Text="{Binding ScheduledDeparture, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}" Foreground="White"/>
+                                                                                <TextBlock Grid.Column="3" Text="{Binding AircraftType}" Foreground="White"/>
+                                                                                <TextBlock Grid.Column="4" Text="{Binding Status}" Foreground="White"/>
+                                                                        </Grid>
+                                                                </Border>
+                                                        </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                </ScrollViewer>
+                        </Border>
+                </Grid>
+        </Border>
 
 </UserControl>
