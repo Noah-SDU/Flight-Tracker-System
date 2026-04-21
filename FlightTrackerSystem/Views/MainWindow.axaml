@@ -17,9 +17,10 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto,Auto">
-        <local:RouteView Grid.Row="0"/>
-        <local:AirportFlightInfoView Grid.Row="1"/>
+    <Grid ColumnDefinitions="Auto,Auto,Auto" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+        <local:RouteView Grid.Column="1"/>
+        <local:AirportFlightInfoView Grid.Column="0"/>
+        <local:AnalyticsView Grid.Column="2"/>
     </Grid>
 
 </Window>
