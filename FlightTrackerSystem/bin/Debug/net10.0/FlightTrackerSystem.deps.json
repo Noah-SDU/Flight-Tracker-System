@@ -14,7 +14,9 @@
           "Avalonia.Fonts.Inter": "11.3.12",
           "Avalonia.Themes.Fluent": "11.3.12",
           "CommunityToolkit.Mvvm": "8.2.1",
-          "Mapsui.Avalonia": "5.0.2"
+          "LiveChartsCore.SkiaSharpView.Avalonia": "2.0.0",
+          "Mapsui.Avalonia": "5.0.2",
+          "System.Reactive": "6.0.0"
         },
         "runtime": {
           "FlightTrackerSystem.dll": {}
@@ -373,6 +375,40 @@
           }
         }
       },
+      "LiveChartsCore/2.0.0": {
+        "runtime": {
+          "lib/net8.0/LiveChartsCore.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "LiveChartsCore.SkiaSharpView/2.0.0": {
+        "dependencies": {
+          "LiveChartsCore": "2.0.0",
+          "SkiaSharp": "3.119.1",
+          "SkiaSharp.HarfBuzz": "3.119.1"
+        },
+        "runtime": {
+          "lib/net8.0/LiveChartsCore.SkiaSharpView.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "LiveChartsCore.SkiaSharpView.Avalonia/2.0.0": {
+        "dependencies": {
+          "Avalonia": "11.3.12",
+          "Avalonia.Skia": "11.3.12",
+          "LiveChartsCore.SkiaSharpView": "2.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/LiveChartsCore.SkiaSharpView.Avalonia.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
       "Mapsui/5.0.2": {
         "runtime": {
           "lib/net9.0/Mapsui.dll": {
@@ -644,6 +680,14 @@
           }
         }
       },
+      "System.Reactive/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.Reactive.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.1"
+          }
+        }
+      },
       "Tmds.DBus.Protocol/0.21.2": {
         "runtime": {
           "lib/net8.0/Tmds.DBus.Protocol.dll": {
@@ -821,6 +865,27 @@
       "path": "harfbuzzsharp.nativeassets.win32/8.3.1.2",
       "hashPath": "harfbuzzsharp.nativeassets.win32.8.3.1.2.nupkg.sha512"
     },
+    "LiveChartsCore/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6ck/dztjwNAlVxOQeD57tlbpfSk0LBxRH15fn8QK/cWz2Wn6D8WX0be+e241snbDQPTuWYZDhE9cZnrfA6EkIQ==",
+      "path": "livechartscore/2.0.0",
+      "hashPath": "livechartscore.2.0.0.nupkg.sha512"
+    },
+    "LiveChartsCore.SkiaSharpView/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BHdfDJp8QgMVjOP/kXLvkP50I5UUHft4x+7hwNg4pI6jvlnSKl1X1PAytsJ3OguQU3sJ7PsZt+/UKMEO7yszfQ==",
+      "path": "livechartscore.skiasharpview/2.0.0",
+      "hashPath": "livechartscore.skiasharpview.2.0.0.nupkg.sha512"
+    },
+    "LiveChartsCore.SkiaSharpView.Avalonia/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0yWbEnZw4PlEUk66aFHUjIqMa16dQpHWUdIcM3nmRMbvbO7VsJ5oiIN7zkUm6tbfYH98OIUAQs2Y6TTXEAqW8w==",
+      "path": "livechartscore.skiasharpview.avalonia/2.0.0",
+      "hashPath": "livechartscore.skiasharpview.avalonia.2.0.0.nupkg.sha512"
+    },
     "Mapsui/5.0.2": {
       "type": "package",
       "serviceable": true,
@@ -946,6 +1011,13 @@
       "sha512": "sha512-pRJtMOc2hTcnxSu7cx6lf806S+2VrQ0eqUpGMBUQQ/pIIvzrtn0+lUjdABTvjr5rsdQF9OxE+r9npq2+3c6T4A==",
       "path": "svg.skia/3.2.1",
       "hashPath": "svg.skia.3.2.1.nupkg.sha512"
+    },
+    "System.Reactive/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-31kfaW4ZupZzPsI5PVe77VhnvFF55qgma7KZr/E0iFTs6fmdhhG8j0mgEx620iLTey1EynOkEfnyTjtNEpJzGw==",
+      "path": "system.reactive/6.0.0",
+      "hashPath": "system.reactive.6.0.0.nupkg.sha512"
     },
     "Tmds.DBus.Protocol/0.21.2": {
       "type": "package",
