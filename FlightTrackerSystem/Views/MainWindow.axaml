@@ -17,7 +17,7 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <Grid RowDefinitions="*,Auto">
+    <Grid RowDefinitions="Auto,Auto">
         <local:RouteView Grid.Row="0"/>
         <local:AirportFlightInfoView Grid.Row="1"/>
     </Grid>

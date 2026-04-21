@@ -8,8 +8,18 @@
         x:Class="FlightTrackerSystem.Views.RouteView"
         x:DataType="vm:RouteViewModel">
 
-        <Border BorderBrush="#23395d" BorderThickness="10" Width="800" Height="450">
-            <mapsui:MapControl x:Name="MyMapControl"/>
+
+        <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="10" Width="750" Height="500" Margin="20">
+            <Grid RowDefinitions="Auto,Auto" RowSpacing="20">
+                <Grid ColumnDefinitions="Auto,*" Grid.Row="0" ColumnSpacing="10" Width="{Binding Width, ElementName=MapFrame}">
+                    <TextBlock Grid.Column="0" FontFamily="Arial" FontSize="18" Text="Search flight route:" Foreground="White" VerticalAlignment="Center"/>
+                    <AutoCompleteBox Grid.Column="1" HorizontalAlignment="Stretch"/>
+                </Grid>
+                <Border Name="MapFrame" Grid.Row="1" BorderBrush="#5779af" BorderThickness="5" Width="700" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <mapsui:MapControl x:Name="MyMapControl"/>
+                </Border>
+            </Grid>
         </Border>
+
 
 </UserControl>
