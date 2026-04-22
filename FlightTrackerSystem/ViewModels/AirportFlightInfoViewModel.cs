@@ -3,11 +3,20 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using FlightTrackerSystem.Models;
+using FlightTrackerSystem.Services;
 
 namespace FlightTrackerSystem.ViewModels;
 
 public partial class AirportFlightInfoViewModel : ViewModelBase
 {
+    private readonly PreferencesService _prefsService = new();
+    private readonly UserPreferences _preferences;
+
+    public AirportFlightInfoViewModel()
+    {
+        _preferences = _prefsService.LoadPreferences();
+    }
+
     [ObservableProperty]
     private FlightData? flightData;
     
@@ -35,6 +44,14 @@ public partial class AirportFlightInfoViewModel : ViewModelBase
         {
             AllAirports = new ObservableCollection<Airport>(flightData.Airports.OrderBy(a => a.IataCode));
         }
+        
+        if (!string.IsNullOrEmpty(_preferences.LastSelectedAirport))
+        {
+            SelectedAirport = AllAirports.FirstOrDefault(a => a.IataCode == _preferences.LastSelectedAirport);
+        }
+        
+        SelectedAirport ??= AllAirports.FirstOrDefault();
+        SelectedStatus = _preferences.LastSelectedStatus ?? "All";
 
         if (flightData?.Flights != null)
         {
@@ -56,11 +73,15 @@ public partial class AirportFlightInfoViewModel : ViewModelBase
 
     partial void OnSelectedAirportChanged(Airport? value)
     {
+        _preferences.LastSelectedAirport = value?.IataCode;
+        _prefsService.SavePreferences(_preferences);
         LoadFlightsForAirport();
     }
 
     partial void OnSelectedStatusChanged(string value)
     {
+        _preferences.LastSelectedStatus = value;
+        _prefsService.SavePreferences(_preferences);
         ApplyFilter();
     }
     

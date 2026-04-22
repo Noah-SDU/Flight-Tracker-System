@@ -12,6 +12,10 @@
     <Compile Include="..\FlightTrackerSystem\Models\Airport.cs" Link="Models\Airport.cs" />
     <Compile Include="..\FlightTrackerSystem\Models\Flight.cs" Link="Models\Flight.cs" />
     <Compile Include="..\FlightTrackerSystem\Models\FlightData.cs" Link="Models\FlightData.cs" />
+    <Compile Include="..\FlightTrackerSystem\Models\UserPreferences.cs">
+      <Link>Models\UserPreferences.cs</Link>
+    </Compile>
+    <Compile Include="..\FlightTrackerSystem\Services\PreferencesService.cs" Link="Services\PreferencesService.cs" />
     <Compile Include="..\FlightTrackerSystem\ViewModels\ViewModelBase.cs" Link="ViewModels\ViewModelBase.cs" />
     <Compile Include="..\FlightTrackerSystem\ViewModels\AnalyticsViewModel.cs" Link="ViewModels\AnalyticsViewModel.cs" />
     <Compile Include="..\FlightTrackerSystem\ViewModels\AirportFlightInfoViewModel.cs" Link="ViewModels\AirportFlightInfoViewModel.cs" />
