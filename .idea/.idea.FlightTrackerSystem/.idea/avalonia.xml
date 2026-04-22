@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="FlightTrackerSystem/App.axaml" value="FlightTrackerSystem/FlightTrackerSystem.csproj" />
+        <entry key="FlightTrackerSystem/Views/AirportFlightInfoView.axaml" value="FlightTrackerSystem/FlightTrackerSystem.csproj" />
+        <entry key="FlightTrackerSystem/Views/AnalyticsView.axaml" value="FlightTrackerSystem/FlightTrackerSystem.csproj" />
+        <entry key="FlightTrackerSystem/Views/MainWindow.axaml" value="FlightTrackerSystem/FlightTrackerSystem.csproj" />
+        <entry key="FlightTrackerSystem/Views/RouteView.axaml" value="FlightTrackerSystem/FlightTrackerSystem.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

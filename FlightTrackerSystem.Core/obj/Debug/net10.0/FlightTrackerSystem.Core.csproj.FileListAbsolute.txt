@@ -1,0 +1,13 @@
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\bin\Debug\net10.0\FlightTrackerSystem.Core.deps.json
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\bin\Debug\net10.0\FlightTrackerSystem.Core.dll
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\bin\Debug\net10.0\FlightTrackerSystem.Core.pdb
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.csproj.AssemblyReference.cache
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.AssemblyInfoInputs.cache
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.AssemblyInfo.cs
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.csproj.CoreCompileInputs.cache
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.sourcelink.json
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.dll
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\refint\FlightTrackerSystem.Core.dll
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.pdb
+C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\ref\FlightTrackerSystem.Core.dll

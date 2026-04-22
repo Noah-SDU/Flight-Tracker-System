@@ -12,6 +12,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Airport.cs" />
+    <Compile Remove="Models\Flight.cs" />
+    <Compile Remove="Models\FlightData.cs" />
+    <Compile Remove="ViewModels\ViewModelBase.cs" />
+    <Compile Remove="ViewModels\AnalyticsViewModel.cs" />
+    <Compile Remove="ViewModels\AirportFlightInfoViewModel.cs" />
+    <Compile Remove="ViewModels\RouteViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FlightTrackerSystem.Core\FlightTrackerSystem.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.3.12" />
     <PackageReference Include="Avalonia.Desktop" Version="11.3.12" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.12" />

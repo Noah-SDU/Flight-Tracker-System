@@ -20,6 +20,8 @@ public partial class AnalyticsViewModel : ViewModelBase
 
     [ObservableProperty] private ObservableCollection<AnalyticsMetric> topAirlinesByTraffic = new();
 
+    public ObservableCollection<AnalyticsMetric> FlightsByAirline => TopAirlinesByTraffic;
+
     [ObservableProperty] private ObservableCollection<AnalyticsMetric> countryTrafficTrends = new();
 
     [ObservableProperty] private int busiestRoutesMax = 1;

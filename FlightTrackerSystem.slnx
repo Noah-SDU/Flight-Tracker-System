@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="FlightTrackerSystem.Core/FlightTrackerSystem.Core.csproj" />
   <Project Path="FlightTrackerSystem/FlightTrackerSystem.csproj" />
+  <Project Path="Test/Test.csproj" />
 </Solution>

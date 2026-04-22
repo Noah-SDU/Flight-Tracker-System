@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "d236IqBtEts=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem.Core\\FlightTrackerSystem.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\avram\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.1\\communitytoolkit.mvvm.8.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}
