@@ -11,3 +11,16 @@ C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.C
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\refint\FlightTrackerSystem.Core.dll
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.pdb
 C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\ref\FlightTrackerSystem.Core.dll
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\bin\Debug\net10.0\FlightTrackerSystem.Core.deps.json
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\bin\Debug\net10.0\FlightTrackerSystem.Core.dll
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\bin\Debug\net10.0\FlightTrackerSystem.Core.pdb
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.csproj.AssemblyReference.cache
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.AssemblyInfoInputs.cache
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.AssemblyInfo.cs
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.csproj.CoreCompileInputs.cache
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.sourcelink.json
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.dll
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\refint\FlightTrackerSystem.Core.dll
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\FlightTrackerSystem.Core.pdb
+C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem.Core\obj\Debug\net10.0\ref\FlightTrackerSystem.Core.dll
