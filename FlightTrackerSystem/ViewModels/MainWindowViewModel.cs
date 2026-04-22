@@ -25,6 +25,8 @@ public partial class MainWindowViewModel : ViewModelBase
     private RouteViewModel? _routeViewModel;
     private AirportFlightInfoViewModel? _airportViewModel;
     private AnalyticsViewModel? _analyticsViewModel;
+    private PreferencesService _prefsService = new();
+    private UserPreferences _preferences = new();
     
     public RouteViewModel? RouteViewModel => _routeViewModel ??= new();
     public AirportFlightInfoViewModel? AirportViewModel => _airportViewModel ??= new();
@@ -33,7 +35,13 @@ public partial class MainWindowViewModel : ViewModelBase
     public MainWindowViewModel()
     {
         _dataService = new FlightDataService();
+        _preferences = _prefsService.LoadPreferences();
         LoadDataAsync();
+    }
+    
+    partial void OnSelectedTabChanged(int value)
+    {
+        _prefsService.SavePreferences(_preferences);
     }
 
     private async void LoadDataAsync()
@@ -61,4 +69,5 @@ public partial class MainWindowViewModel : ViewModelBase
             IsLoading = false;
         }
     }
+    
 }

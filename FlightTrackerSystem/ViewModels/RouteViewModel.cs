@@ -3,11 +3,20 @@ using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FlightTrackerSystem.Models;
+using FlightTrackerSystem.Services;
 
 namespace FlightTrackerSystem.ViewModels;
 
 public partial class RouteViewModel : ViewModelBase
 {
+    private readonly PreferencesService _prefsService = new();
+    private readonly UserPreferences _preferences;
+
+    public RouteViewModel()
+    {
+        _preferences = _prefsService.LoadPreferences();
+    }
+
     [ObservableProperty]
     private FlightData? flightData;
 
@@ -28,6 +37,7 @@ public partial class RouteViewModel : ViewModelBase
     public void Initialize(FlightData flightData)
     {
         FlightData = flightData;
+        RouteSearchText = _preferences.LastSearchQuery ?? string.Empty;
         ApplyRouteFilter();
     }
 
@@ -35,6 +45,9 @@ public partial class RouteViewModel : ViewModelBase
     {
         // When AutoComplete commits a picked item, it writes that item text back to Text.
         // Detecting committed display text here avoids mutating ItemsSource during drop-down close.
+        _preferences.LastSearchQuery = value;
+        _prefsService.SavePreferences(_preferences);
+        
         if (FlightData?.Flights is { Count: > 0 } flights)
         {
             var committedFlight = flights.FirstOrDefault(f =>
