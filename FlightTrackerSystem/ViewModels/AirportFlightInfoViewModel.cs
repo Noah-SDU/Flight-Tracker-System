@@ -9,12 +9,19 @@ namespace FlightTrackerSystem.ViewModels;
 
 public partial class AirportFlightInfoViewModel : ViewModelBase
 {
-    private readonly PreferencesService _prefsService = new();
+    private readonly PreferencesService _prefsService;
     private readonly UserPreferences _preferences;
+    private bool _isInitialized;
 
     public AirportFlightInfoViewModel()
+        : this(new PreferencesService(), null)
     {
-        _preferences = _prefsService.LoadPreferences();
+    }
+
+    public AirportFlightInfoViewModel(PreferencesService prefsService, UserPreferences? preferences)
+    {
+        _prefsService = prefsService;
+        _preferences = preferences ?? _prefsService.LoadPreferences();
     }
 
     [ObservableProperty]
@@ -38,6 +45,7 @@ public partial class AirportFlightInfoViewModel : ViewModelBase
 
     public void Initialize(FlightData flightData)
     {
+        _isInitialized = false;
         FlightData = flightData;
         
         if (flightData?.Airports != null)
@@ -51,7 +59,6 @@ public partial class AirportFlightInfoViewModel : ViewModelBase
         }
         
         SelectedAirport ??= AllAirports.FirstOrDefault();
-        SelectedStatus = _preferences.LastSelectedStatus ?? "All";
 
         if (flightData?.Flights != null)
         {
@@ -67,12 +74,28 @@ public partial class AirportFlightInfoViewModel : ViewModelBase
             StatusOptions = new ObservableCollection<string>(statuses);
         }
         
-        SelectedStatus = "All";
-        SelectedAirport = AllAirports.FirstOrDefault();
+        var savedStatus = _preferences.LastSelectedStatus;
+        var matchedStatus = StatusOptions.FirstOrDefault(s =>
+            string.Equals(s, savedStatus, System.StringComparison.OrdinalIgnoreCase));
+
+        SelectedStatus = matchedStatus ?? "All";
+
+        if (!StatusOptions.Contains(SelectedStatus, System.StringComparer.OrdinalIgnoreCase))
+        {
+            SelectedStatus = "All";
+        }
+
+        LoadFlightsForAirport();
+        _isInitialized = true;
     }
 
     partial void OnSelectedAirportChanged(Airport? value)
     {
+        if (!_isInitialized)
+        {
+            return;
+        }
+
         _preferences.LastSelectedAirport = value?.IataCode;
         _prefsService.SavePreferences(_preferences);
         LoadFlightsForAirport();
@@ -80,6 +103,11 @@ public partial class AirportFlightInfoViewModel : ViewModelBase
 
     partial void OnSelectedStatusChanged(string value)
     {
+        if (!_isInitialized)
+        {
+            return;
+        }
+
         _preferences.LastSelectedStatus = value;
         _prefsService.SavePreferences(_preferences);
         ApplyFilter();

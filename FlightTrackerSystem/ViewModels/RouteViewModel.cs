@@ -9,12 +9,20 @@ namespace FlightTrackerSystem.ViewModels;
 
 public partial class RouteViewModel : ViewModelBase
 {
-    private readonly PreferencesService _prefsService = new();
+    private readonly PreferencesService _prefsService;
     private readonly UserPreferences _preferences;
+    private bool _isInitialized;
+    private bool _isUpdatingFromSelection;
 
     public RouteViewModel()
+        : this(new PreferencesService(), null)
     {
-        _preferences = _prefsService.LoadPreferences();
+    }
+
+    public RouteViewModel(PreferencesService prefsService, UserPreferences? preferences)
+    {
+        _prefsService = prefsService;
+        _preferences = preferences ?? _prefsService.LoadPreferences();
     }
 
     [ObservableProperty]
@@ -36,13 +44,37 @@ public partial class RouteViewModel : ViewModelBase
 
     public void Initialize(FlightData flightData)
     {
+        _isInitialized = false;
         FlightData = flightData;
         RouteSearchText = _preferences.LastSearchQuery ?? string.Empty;
         ApplyRouteFilter();
+
+        if (!string.IsNullOrWhiteSpace(RouteSearchText))
+        {
+            var restoredFlight = flightData.Flights.FirstOrDefault(f =>
+                string.Equals(f.DisplayName, RouteSearchText, System.StringComparison.Ordinal));
+
+            if (restoredFlight != null)
+            {
+                SelectedFlight = restoredFlight;
+            }
+        }
+
+        _isInitialized = true;
     }
 
     partial void OnRouteSearchTextChanged(string value)
     {
+        if (!_isInitialized)
+        {
+            return;
+        }
+
+        if (_isUpdatingFromSelection)
+        {
+            return;
+        }
+
         // When AutoComplete commits a picked item, it writes that item text back to Text.
         // Detecting committed display text here avoids mutating ItemsSource during drop-down close.
         _preferences.LastSearchQuery = value;
@@ -81,6 +113,21 @@ public partial class RouteViewModel : ViewModelBase
     partial void OnSelectedFlightChanged(Flight? value)
     {
         UpdateSelectedRoute();
+
+        if (!_isInitialized || value == null)
+        {
+            return;
+        }
+
+        if (!string.Equals(RouteSearchText, value.DisplayName, System.StringComparison.Ordinal))
+        {
+            _isUpdatingFromSelection = true;
+            RouteSearchText = value.DisplayName;
+            _isUpdatingFromSelection = false;
+        }
+
+        _preferences.LastSearchQuery = value.DisplayName;
+        _prefsService.SavePreferences(_preferences);
     }
 
     private void ApplyRouteFilter()

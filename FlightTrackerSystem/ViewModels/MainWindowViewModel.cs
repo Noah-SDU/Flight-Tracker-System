@@ -25,22 +25,24 @@ public partial class MainWindowViewModel : ViewModelBase
     private RouteViewModel? _routeViewModel;
     private AirportFlightInfoViewModel? _airportViewModel;
     private AnalyticsViewModel? _analyticsViewModel;
-    private PreferencesService _prefsService = new();
-    private UserPreferences _preferences = new();
+    private readonly PreferencesService _prefsService = new();
+    private readonly UserPreferences _preferences;
     
-    public RouteViewModel? RouteViewModel => _routeViewModel ??= new();
-    public AirportFlightInfoViewModel? AirportViewModel => _airportViewModel ??= new();
+    public RouteViewModel? RouteViewModel => _routeViewModel ??= new(_prefsService, _preferences);
+    public AirportFlightInfoViewModel? AirportViewModel => _airportViewModel ??= new(_prefsService, _preferences);
     public AnalyticsViewModel? AnalyticsViewModel => _analyticsViewModel ??= new();
     
     public MainWindowViewModel()
     {
         _dataService = new FlightDataService();
         _preferences = _prefsService.LoadPreferences();
+        SelectedTab = _preferences.LastSelectedTab ?? 0;
         LoadDataAsync();
     }
     
     partial void OnSelectedTabChanged(int value)
     {
+        _preferences.LastSelectedTab = value;
         _prefsService.SavePreferences(_preferences);
     }
 

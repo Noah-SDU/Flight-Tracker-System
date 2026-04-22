@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlightTrackerSystem.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2927bacd2e06fd58cfc352de5e8392ae5cee973e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7abb7881f6177ace0a155a7c53ca11ba4b7c18f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlightTrackerSystem.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlightTrackerSystem.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

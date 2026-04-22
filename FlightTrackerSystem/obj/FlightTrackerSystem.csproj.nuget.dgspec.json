@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nojus\\OneDrive\\Documents\\Flight-Tracker-System\\FlightTrackerSystem\\FlightTrackerSystem.csproj": {}
+    "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem\\FlightTrackerSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nojus\\OneDrive\\Documents\\Flight-Tracker-System\\FlightTrackerSystem.Core\\FlightTrackerSystem.Core.csproj": {
+    "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem.Core\\FlightTrackerSystem.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nojus\\OneDrive\\Documents\\Flight-Tracker-System\\FlightTrackerSystem.Core\\FlightTrackerSystem.Core.csproj",
+        "projectUniqueName": "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem.Core\\FlightTrackerSystem.Core.csproj",
         "projectName": "FlightTrackerSystem.Core",
-        "projectPath": "C:\\Users\\nojus\\OneDrive\\Documents\\Flight-Tracker-System\\FlightTrackerSystem.Core\\FlightTrackerSystem.Core.csproj",
-        "packagesPath": "C:\\Users\\nojus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nojus\\OneDrive\\Documents\\Flight-Tracker-System\\FlightTrackerSystem.Core\\obj\\",
+        "projectPath": "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem.Core\\FlightTrackerSystem.Core.csproj",
+        "packagesPath": "C:\\Users\\avram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\nojus\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\avram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
@@ -65,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -343,30 +350,37 @@
         }
       }
     },
-    "C:\\Users\\nojus\\OneDrive\\Documents\\Flight-Tracker-System\\FlightTrackerSystem\\FlightTrackerSystem.csproj": {
+    "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem\\FlightTrackerSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nojus\\OneDrive\\Documents\\Flight-Tracker-System\\FlightTrackerSystem\\FlightTrackerSystem.csproj",
+        "projectUniqueName": "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem\\FlightTrackerSystem.csproj",
         "projectName": "FlightTrackerSystem",
-        "projectPath": "C:\\Users\\nojus\\OneDrive\\Documents\\Flight-Tracker-System\\FlightTrackerSystem\\FlightTrackerSystem.csproj",
-        "packagesPath": "C:\\Users\\nojus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nojus\\OneDrive\\Documents\\Flight-Tracker-System\\FlightTrackerSystem\\obj\\",
+        "projectPath": "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem\\FlightTrackerSystem.csproj",
+        "packagesPath": "C:\\Users\\avram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\nojus\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\avram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\nojus\\OneDrive\\Documents\\Flight-Tracker-System\\FlightTrackerSystem.Core\\FlightTrackerSystem.Core.csproj": {
-                "projectPath": "C:\\Users\\nojus\\OneDrive\\Documents\\Flight-Tracker-System\\FlightTrackerSystem.Core\\FlightTrackerSystem.Core.csproj"
+              "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem.Core\\FlightTrackerSystem.Core.csproj": {
+                "projectPath": "C:\\Users\\avram\\RiderProjects\\Library\\Flight-Tracker-System\\FlightTrackerSystem.Core\\FlightTrackerSystem.Core.csproj"
               }
             }
           }
@@ -381,7 +395,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
@@ -440,7 +454,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
