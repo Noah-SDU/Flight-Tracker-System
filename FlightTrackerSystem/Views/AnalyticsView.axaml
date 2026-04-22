@@ -9,10 +9,16 @@
         x:DataType="vm:AnalyticsViewModel">
 
         <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="12" Width="560" Height="340" Margin="10">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Spacing="12">
-                                <TextBlock Text="Flight Analytics" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left"/>
+                <Grid RowDefinitions="Auto,Auto,*" RowSpacing="10">
+                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                                <TextBlock Grid.Column="0" Text="Flight Analytics" FontSize="18" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
+                                <Button Grid.Column="1" Content="Export to .txt" Command="{Binding ExportAnalyticsToTextFileCommand}" Background="#4f79b6" Foreground="White" BorderBrush="#6a92cb"/>
+                        </Grid>
 
+                        <TextBlock Grid.Row="1" Text="{Binding ExportResultMessage}" Foreground="#bdd7ff" FontSize="12" TextWrapping="Wrap"/>
+
+                        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                                <StackPanel Spacing="12">
                                 <Border Background="#20385a" BorderBrush="#5779af" BorderThickness="1" CornerRadius="8" Padding="10">
                                         <StackPanel Spacing="6">
                                                 <TextBlock Text="Busiest Routes By Time Of Day" FontSize="16" FontWeight="SemiBold" Foreground="White"/>
@@ -66,8 +72,9 @@
                                                 </ItemsControl>
                                         </StackPanel>
                                 </Border>
-                        </StackPanel>
-                </ScrollViewer>
+                                </StackPanel>
+                        </ScrollViewer>
+                </Grid>
         </Border>
 
 </UserControl>

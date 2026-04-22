@@ -1,6 +1,10 @@
 using System.Collections.ObjectModel;
+using System;
+using System.IO;
 using System.Linq;
+using System.Text;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using FlightTrackerSystem.Models;
 
 namespace FlightTrackerSystem.ViewModels;
@@ -29,6 +33,8 @@ public partial class AnalyticsViewModel : ViewModelBase
     [ObservableProperty] private int topAirlinesMax = 1;
 
     [ObservableProperty] private int countryTrafficMax = 1;
+
+    [ObservableProperty] private string exportResultMessage = string.Empty;
 
     public void Initialize(FlightData? flightData)
     {
@@ -127,5 +133,52 @@ public partial class AnalyticsViewModel : ViewModelBase
             >= 17 and < 22 => "Evening",
             _ => "Night"
         };
+    }
+
+    [RelayCommand]
+    private void ExportAnalyticsToTextFile()
+    {
+        try
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var fileName = $"flight_analytics_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+            var fullPath = Path.Combine(documentsPath, fileName);
+
+            var builder = new StringBuilder();
+            builder.AppendLine("Flight Tracker Analytics Export");
+            builder.AppendLine($"Generated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
+            builder.AppendLine();
+
+            AppendSection(builder, "Busiest Routes By Time Of Day", BusiestRoutesByTimeOfDay);
+            AppendSection(builder, "Top Airlines By Traffic Volume", TopAirlinesByTraffic);
+            AppendSection(builder, "Country-Level Traffic Trends", CountryTrafficTrends);
+
+            File.WriteAllText(fullPath, builder.ToString());
+            ExportResultMessage = $"Exported analytics to: {fullPath}";
+        }
+        catch (Exception ex)
+        {
+            ExportResultMessage = $"Export failed: {ex.Message}";
+        }
+    }
+
+    private static void AppendSection(StringBuilder builder, string title, ObservableCollection<AnalyticsMetric> items)
+    {
+        builder.AppendLine(title);
+        builder.AppendLine(new string('-', title.Length));
+
+        if (items.Count == 0)
+        {
+            builder.AppendLine("No data available.");
+            builder.AppendLine();
+            return;
+        }
+
+        foreach (var item in items)
+        {
+            builder.AppendLine($"- {item.Label}: {item.Count}");
+        }
+
+        builder.AppendLine();
     }
 }

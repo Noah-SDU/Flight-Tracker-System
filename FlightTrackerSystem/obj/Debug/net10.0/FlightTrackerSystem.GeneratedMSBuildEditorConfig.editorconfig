@@ -17,23 +17,23 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FlightTrackerSystem
-build_property.ProjectDir = C:\Users\avram\RiderProjects\Library\Flight-Tracker-System\FlightTrackerSystem\
+build_property.ProjectDir = C:\Users\nojus\OneDrive\Documents\Flight-Tracker-System\FlightTrackerSystem\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/avram/RiderProjects/Library/Flight-Tracker-System/FlightTrackerSystem/App.axaml]
+[C:/Users/nojus/OneDrive/Documents/Flight-Tracker-System/FlightTrackerSystem/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/avram/RiderProjects/Library/Flight-Tracker-System/FlightTrackerSystem/Views/AirportFlightInfoView.axaml]
+[C:/Users/nojus/OneDrive/Documents/Flight-Tracker-System/FlightTrackerSystem/Views/AirportFlightInfoView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/avram/RiderProjects/Library/Flight-Tracker-System/FlightTrackerSystem/Views/AnalyticsView.axaml]
+[C:/Users/nojus/OneDrive/Documents/Flight-Tracker-System/FlightTrackerSystem/Views/AnalyticsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/avram/RiderProjects/Library/Flight-Tracker-System/FlightTrackerSystem/Views/MainWindow.axaml]
+[C:/Users/nojus/OneDrive/Documents/Flight-Tracker-System/FlightTrackerSystem/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/avram/RiderProjects/Library/Flight-Tracker-System/FlightTrackerSystem/Views/RouteView.axaml]
+[C:/Users/nojus/OneDrive/Documents/Flight-Tracker-System/FlightTrackerSystem/Views/RouteView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

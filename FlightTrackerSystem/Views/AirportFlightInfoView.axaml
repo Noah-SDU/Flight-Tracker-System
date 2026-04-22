@@ -36,7 +36,7 @@
                                                 <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
                                                                 <Border BorderBrush="#3f5d8a" BorderThickness="0,0,0,1" Padding="0,6">
-                                                                        <Grid ColumnDefinitions="85,60,115,80,*" ColumnSpacing="8">
+                                                                        <Grid ColumnDefinitions="85,60,130,80,*" ColumnSpacing="8">
                                                                                 <TextBlock Grid.Column="0" Text="{Binding FlightNumber}" Foreground="White"/>
                                                                                 <TextBlock Grid.Column="1" Text="{Binding ArrivalAirport}" Foreground="White"/>
                                                                                 <TextBlock Grid.Column="2" Text="{Binding ScheduledDeparture, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}" Foreground="White"/>
