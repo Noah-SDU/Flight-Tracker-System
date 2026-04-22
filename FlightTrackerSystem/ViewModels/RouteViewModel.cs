@@ -38,7 +38,7 @@ public partial class RouteViewModel : ViewModelBase
         if (FlightData?.Flights is { Count: > 0 } flights)
         {
             var committedFlight = flights.FirstOrDefault(f =>
-                string.Equals(value, f.ToString(), System.StringComparison.Ordinal));
+                string.Equals(value, f.DisplayName, System.StringComparison.Ordinal));
 
             if (committedFlight != null)
             {
@@ -52,7 +52,7 @@ public partial class RouteViewModel : ViewModelBase
         }
 
         if (SelectedFlight != null
-            && string.Equals(value, SelectedFlight.ToString(), System.StringComparison.Ordinal))
+            && string.Equals(value, SelectedFlight.DisplayName, System.StringComparison.Ordinal))
         {
             return;
         }

@@ -14,8 +14,10 @@ public class Flight
     public string? Status { get; set; }
     public string? AircraftType { get; set; }
 
+    public string DisplayName => $"{FlightNumber} | {AirlineCode} {AirlineName} | {DepartureAirport} -> {ArrivalAirport}";
+
     public override string ToString()
     {
-        return $"{FlightNumber} | {AirlineCode} {AirlineName} | {DepartureAirport} -> {ArrivalAirport}";
+        return DisplayName;
     }
 }

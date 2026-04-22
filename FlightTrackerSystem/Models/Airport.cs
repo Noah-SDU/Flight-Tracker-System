@@ -9,8 +9,10 @@ public class Airport
     public double Latitude { get; set; }
     public double Longitude { get; set; }
 
+    public string DisplayName => $"{IataCode} - {Name} ({City})";
+
     public override string ToString()
     {
-        return $"{IataCode} - {Name}";
+        return DisplayName;
     }
 }

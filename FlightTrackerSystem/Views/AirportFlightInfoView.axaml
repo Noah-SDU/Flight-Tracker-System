@@ -7,8 +7,8 @@
         x:Class="FlightTrackerSystem.Views.AirportFlightInfoView"
         x:DataType="vm:AirportFlightInfoViewModel">
 
-        <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="10" Width="620" Height="360" Margin="10">
-                <Grid RowDefinitions="Auto,Auto,Auto,*" RowSpacing="10">
+        <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="10" Width="560" Height="340" Margin="10">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,*" RowSpacing="10">
                         <TextBlock Grid.Row="0" Text="Airport Flights" FontSize="18" FontWeight="Bold" Foreground="White"/>
 
                         <Grid Grid.Row="1" ColumnDefinitions="Auto,*" ColumnSpacing="10">
@@ -19,19 +19,24 @@
                         </Grid>
 
                         <Grid Grid.Row="2" ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                                <TextBlock Grid.Column="0" Text="Selected airport:" Foreground="White" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Text="{Binding SelectedAirport.DisplayName}" Foreground="White" VerticalAlignment="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="3" ColumnDefinitions="Auto,*" ColumnSpacing="10">
                                 <TextBlock Grid.Column="0" Text="Status:" Foreground="White" VerticalAlignment="Center"/>
                                 <ComboBox Grid.Column="1"
                                                   ItemsSource="{Binding StatusOptions}"
                                                   SelectedItem="{Binding SelectedStatus}"/>
                         </Grid>
 
-                        <Border Grid.Row="3" BorderBrush="#5779af" BorderThickness="1" CornerRadius="6" Padding="8">
+                        <Border Grid.Row="4" BorderBrush="#5779af" BorderThickness="1" CornerRadius="6" Padding="8" MinHeight="150">
                                 <ScrollViewer>
                                         <ItemsControl ItemsSource="{Binding DisplayedFlights}">
                                                 <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
                                                                 <Border BorderBrush="#3f5d8a" BorderThickness="0,0,0,1" Padding="0,6">
-                                                                        <Grid ColumnDefinitions="95,65,125,90,*" ColumnSpacing="8">
+                                                                        <Grid ColumnDefinitions="85,60,115,80,*" ColumnSpacing="8">
                                                                                 <TextBlock Grid.Column="0" Text="{Binding FlightNumber}" Foreground="White"/>
                                                                                 <TextBlock Grid.Column="1" Text="{Binding ArrivalAirport}" Foreground="White"/>
                                                                                 <TextBlock Grid.Column="2" Text="{Binding ScheduledDeparture, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}" Foreground="White"/>

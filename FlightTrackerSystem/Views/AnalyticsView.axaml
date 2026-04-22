@@ -8,7 +8,7 @@
         x:Class="FlightTrackerSystem.Views.AnalyticsView"
         x:DataType="vm:AnalyticsViewModel">
 
-        <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="12" Width="620" Height="360" Margin="10">
+        <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="12" Width="560" Height="340" Margin="10">
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel Spacing="12">
                                 <TextBlock Text="Flight Analytics" FontSize="18" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left"/>
@@ -20,7 +20,7 @@
                                                 <ItemsControl ItemsSource="{Binding BusiestRoutesByTimeOfDay}">
                                                         <ItemsControl.ItemTemplate>
                                                                 <DataTemplate x:DataType="vm:AnalyticsViewModel+AnalyticsMetric">
-                                                                        <Grid ColumnDefinitions="230,*,45" Margin="0,4,0,4" ColumnSpacing="8">
+                                                                        <Grid ColumnDefinitions="210,*,45" Margin="0,4,0,4" ColumnSpacing="8">
                                                                                 <TextBlock Grid.Column="0" Text="{Binding Label}" Foreground="White" TextTrimming="CharacterEllipsis"/>
                                                                                 <ProgressBar Grid.Column="1" Minimum="0" Maximum="{Binding #Root.DataContext.BusiestRoutesMax}" Value="{Binding Count}" Height="12"/>
                                                                                 <TextBlock Grid.Column="2" Text="{Binding Count}" Foreground="#e8f1ff" HorizontalAlignment="Right"/>
@@ -38,7 +38,7 @@
                                                 <ItemsControl ItemsSource="{Binding TopAirlinesByTraffic}">
                                                         <ItemsControl.ItemTemplate>
                                                                 <DataTemplate x:DataType="vm:AnalyticsViewModel+AnalyticsMetric">
-                                                                        <Grid ColumnDefinitions="230,*,45" Margin="0,4,0,4" ColumnSpacing="8">
+                                                                        <Grid ColumnDefinitions="210,*,45" Margin="0,4,0,4" ColumnSpacing="8">
                                                                                 <TextBlock Grid.Column="0" Text="{Binding Label}" Foreground="White" TextTrimming="CharacterEllipsis"/>
                                                                                 <ProgressBar Grid.Column="1" Minimum="0" Maximum="{Binding #Root.DataContext.TopAirlinesMax}" Value="{Binding Count}" Height="12"/>
                                                                                 <TextBlock Grid.Column="2" Text="{Binding Count}" Foreground="#e8f1ff" HorizontalAlignment="Right"/>
@@ -56,7 +56,7 @@
                                                 <ItemsControl ItemsSource="{Binding CountryTrafficTrends}">
                                                         <ItemsControl.ItemTemplate>
                                                                 <DataTemplate x:DataType="vm:AnalyticsViewModel+AnalyticsMetric">
-                                                                        <Grid ColumnDefinitions="230,*,45" Margin="0,4,0,4" ColumnSpacing="8">
+                                                                        <Grid ColumnDefinitions="210,*,45" Margin="0,4,0,4" ColumnSpacing="8">
                                                                                 <TextBlock Grid.Column="0" Text="{Binding Label}" Foreground="White" TextTrimming="CharacterEllipsis"/>
                                                                                 <ProgressBar Grid.Column="1" Minimum="0" Maximum="{Binding #Root.DataContext.CountryTrafficMax}" Value="{Binding Count}" Height="12"/>
                                                                                 <TextBlock Grid.Column="2" Text="{Binding Count}" Foreground="#e8f1ff" HorizontalAlignment="Right"/>

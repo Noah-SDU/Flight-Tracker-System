@@ -9,9 +9,9 @@
         x:DataType="vm:RouteViewModel">
 
 
-        <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="10" Width="760" Height="740" Margin="10">
-            <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
-                <Grid ColumnDefinitions="Auto,*,Auto" Grid.Row="0" ColumnSpacing="10" Width="{Binding Width, ElementName=MapFrame}">
+        <Border Background="#2a446c" BorderBrush="#5779af" BorderThickness="2" CornerRadius="10" Padding="10" Width="700" Height="700" Margin="10">
+            <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
+            <Grid ColumnDefinitions="Auto,*,Auto" Grid.Row="0" ColumnSpacing="10" Width="{Binding Width, ElementName=MapFrame}">
                     <TextBlock Grid.Column="0" FontFamily="Arial" FontSize="16" Text="Flight:" Foreground="White" VerticalAlignment="Center"/>
                     <AutoCompleteBox x:Name="FlightAutoComplete"
                                      Grid.Column="1"
@@ -29,8 +29,21 @@
                     <Button Grid.Column="2" Content="Clear" Background="#5779af" Padding="12,6" Command="{Binding ClearSelectionCommand}"/>
                 </Grid>
 
-                <Border Name="MapFrame" Grid.Row="1" BorderBrush="#5779af" BorderThickness="5" Width="710" Height="630" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Border Name="MapFrame" Grid.Row="1" BorderBrush="#5779af" BorderThickness="5" Width="650" Height="560" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <mapsui:MapControl x:Name="MyMapControl"/>
+                </Border>
+
+                <Border Grid.Row="2" HorizontalAlignment="Center" Background="#203553" BorderBrush="#5779af" BorderThickness="1" CornerRadius="6" Padding="10,6">
+                    <StackPanel Orientation="Horizontal" Spacing="18">
+                        <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                            <Ellipse Width="10" Height="10" Fill="Red" Stroke="#d4d4d4" StrokeThickness="1"/>
+                            <TextBlock Text="Departure" Foreground="White" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+                            <Ellipse Width="10" Height="10" Fill="Green" Stroke="#d4d4d4" StrokeThickness="1"/>
+                            <TextBlock Text="Arrival" Foreground="White" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
                 </Border>
             </Grid>
         </Border>
