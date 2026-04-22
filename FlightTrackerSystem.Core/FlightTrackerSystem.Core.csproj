@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\FlightTrackerSystem\Models\Airport.cs" Link="Models\Airport.cs" />
+    <Compile Include="..\FlightTrackerSystem\Models\Flight.cs" Link="Models\Flight.cs" />
+    <Compile Include="..\FlightTrackerSystem\Models\FlightData.cs" Link="Models\FlightData.cs" />
+    <Compile Include="..\FlightTrackerSystem\ViewModels\ViewModelBase.cs" Link="ViewModels\ViewModelBase.cs" />
+    <Compile Include="..\FlightTrackerSystem\ViewModels\AnalyticsViewModel.cs" Link="ViewModels\AnalyticsViewModel.cs" />
+    <Compile Include="..\FlightTrackerSystem\ViewModels\AirportFlightInfoViewModel.cs" Link="ViewModels\AirportFlightInfoViewModel.cs" />
+    <Compile Include="..\FlightTrackerSystem\ViewModels\RouteViewModel.cs" Link="ViewModels\RouteViewModel.cs" />
+  </ItemGroup>
+</Project>
+
